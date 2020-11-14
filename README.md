@@ -34,3 +34,15 @@ The service provides an endpoint that will determine, from a set of recipes, wha
     ```
     
 3. Run Springboot LunchApplication
+
+## Changes by San Seo
+1. Added repository class so that we can take the logic for persistent layer from service layer
+2. Updated package structure so that we can find each item more easily
+3. Controller mapping. It should be a get mapping and moved end point mapping at class level as the controller should handle the requests for lunch only
+4. Removed all field dependency injections
+5. Fixed join mapping and fixed predicate
+
+#### Thoughts
+* Currently, it's filtering the recipe by the useByDate of ingredient in each recipe at database level.
+The last acceptance criteria is bit ambiguous as we need to put the recipe which has any ingredient past it's bestBefore. 
+I think we can simply the logic in service by get the earliest bestBefore date from each recipe and sort them by the date.

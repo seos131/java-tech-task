@@ -1,4 +1,4 @@
-package com.rezdy.lunch.service;
+package com.rezdy.lunch.model;
 
 public class ErrorResponse {
     private String errorMessage;
